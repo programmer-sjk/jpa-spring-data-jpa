@@ -12,7 +12,7 @@ public class GetUserService {
         try {
             User user = em.find(User.class, email);
             if (user == null) {
-                throw new IllegalArgumentException("유저가 없습니다.");
+                throw new NoUserException();
             }
 
             return user;
